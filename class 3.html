@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 3</title>
+</head>
+<style>
+    body{
+        background-color: yellow;
+        text-align: center;
+        padding: 20px;
+    }
+    input{
+        border-radius: 10px;
+        border: 0;
+        padding: 10px;
+    }
+    button{
+        padding: 10px;
+        border-radius: 10px;
+        border: 0;
+        cursor: pointer;
+    }
+</style>
+<body>
+    <h1>Arithmetic Calculator</h1>
+    <input type="text" name="" id="num1" placeholder="Enter first number"><br><br>
+    <input type="text" name="" id="num2" placeholder="Enter second number"><br><br>
+    <button onclick="view('add')">Add</button>
+    <button onclick="view('sub')">Subtraction</button>
+    <button onclick="view('mul')">Product</button>
+    <button onclick="view('div')">Division</button>
+    <h2 id="result"></h2>
+    <script>
+        let view=(x)=>{
+            let c='';
+             let a=parseFloat( document.getElementById('num1').value)
+             let b=parseFloat(document.getElementById('num2').value)
+             if(!a || !b){
+                alert('Please enter the values');
+             }
+             else{
+                switch(x){
+                    case 'add':
+                        c=a+b
+                        break;
+                    case 'sub':
+                        c=a-b
+                        break;
+                    case 'mul':
+                        c=a*b
+                        break;
+                    case 'div':
+                        c=a/b
+                        break;
+                }
+
+                // if(x=='add'){
+                //     c=a+b;
+                // }
+                // else if(x=='sub'){
+                //     c=a-b;
+                // }
+                // else if(x=='mul'){
+                //     c=a*b;
+                // }
+                // else if(x=='div'){
+                //     c=a/b;
+                // }
+             }
+             document.getElementById('result').innerHTML=c
+
+        }
+
+      
+    </script>
+</body>
+</html>
