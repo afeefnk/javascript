@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: white;
+            font-family: Arial, sans-serif;
+        }
+        .main {
+            width: 200px;
+            background-color: #284b62;
+            border-radius: 5px;
+            padding: 12px;
+            box-shadow: 8px 8px 15px;  
+        }
+        #display {
+            width: 100%;
+            height: 40px;
+            color: white;
+            background-color: #366953;  
+            border: none;
+            box-shadow: -1px -1px 1px black; 
+            border-radius: 3px;
+            margin-top: 3px;
+            margin-bottom: 10px;
+        }
+        
+        .buttons input  {
+            width: 100%;
+            height: 40px;
+            padding-left: 10px;
+            padding-right: 10px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 3px; 
+            box-shadow: 1px 1px 1px black;  
+            cursor: pointer;
+        }
+        table {
+            width: 100%;
+        }
+        td{
+            padding: 3px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <input type="text" id="display" readonly>
+        <div class="buttons">
+            <table>
+                <tr>
+                    <td><input type="button" value="C" style="background-color: #c53e40;" onclick="clr()"/></td>
+                    <td><input type="button" value="< -" style="background-color: #c53e40;" onclick="back()"></td>
+                    <td><input type="button" value="/" onclick="dis('/')"
+                        onkeydown="myFunction(event)"></td>
+                    <td><input type="button" value="*"  onclick="dis('*')"
+                        onkeydown="myFunction(event)"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="7" onclick="dis('7')"
+                        onkeydown="myFunction(event)"></td>
+                    <td><input type="button" value="8" onclick="dis('8')"
+                        onkeydown="myFunction(event)"></td>
+                    <td><input type="button" value="9" onclick="dis('9')"
+                        onkeydown="myFunction(event)"></td>
+                    <td><input type="button" value="-" onclick="dis('-')"
+                        onkeydown="myFunction(event)"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="4" onclick="dis('4')"
+                        onkeydown="myFunction(event)"></td>
+                    <td><input type="button" value="5" onclick="dis('5')"
+                        onkeydown="myFunction(event)"></td> 
+                    <td><input type="button" value="6" onclick="dis('6')"
+                        onkeydown="myFunction(event)"></td>
+                    <td rowspan="2"><input type="button" value="+" style="height: 90px;" onclick="dis('+')"
+                        onkeydown="myFunction(event)"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="1" onclick="dis('1')"
+                        onkeydown="myFunction(event)"></td>
+                    <td><input type="button" value="2" onclick="dis('2')"
+                        onkeydown="myFunction(event)"></td>
+                    <td><input type="button" value="3" onclick="dis('3')"
+                        onkeydown="myFunction(event)"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="0" onclick="dis('0')"
+                        onkeydown="myFunction(event)"></td>
+                    <td><input type="button" value="." onclick="dis('.')"
+                        onkeydown="myFunction(event)"></td>
+                    <td colspan="2"><input type="button" value="=" onclick="solve()"></td>
+               </tr>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        var dis=(val)=>{
+        document.getElementById("display").value += val;
+     }
+     var clr=()=>{
+        document.getElementById("display").value = "" ;
+     }
+     var back=()=>{
+        let display = document.getElementById("display");
+            display.value = display.value.slice(0, -1);
+     }
+     var solve=()=>{
+        let x=document.getElementById("display").value
+        let y=eval(x);
+        document.getElementById("display").value=y
+     }
+
+    </script>
+</body>
+</html>
