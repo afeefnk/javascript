@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clone</title>
+</head>
+<body>
+    <script>
+
+        // ..............Clone using spread method......................
+
+        // const userDetails={
+        //     name:"Martin",
+        //     age: 18,
+        //     verified: true
+        // };
+        // let cloneUser={...userDetails};
+        // cloneUser.name="Paul";
+        // console.log(cloneUser);
+
+
+
+
+        //................. Clone using object.assign method...........................
+
+        // const userDetails={
+        //     name:"Martin",
+        //     age: 18,
+        //     verified: true
+        // };
+        // let cloneUser=Object.assign({},userDetails)
+        // cloneUser.age=20
+        // console.log(cloneUser);
+
+
+
+
+
+        // ..................Clone using json.parse() method.............................
+
+        
+        const userDetails={
+            name:"Martin",
+            age: 18,
+            verified: true
+        };
+
+        let cloneUser=JSON.parse(JSON.stringify(userDetails))
+        cloneUser.verified=false
+        console.log(cloneUser);
+
+    </script>
+</body>
+</html>

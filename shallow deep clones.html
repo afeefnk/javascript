@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Clone</title>
+</head>
+<body>
+    <script>
+    //   Deep clone
+
+    const userDetails={
+        name:"John Ebraham",
+        age:35,
+        status:{
+            verified:true
+        }
+    };
+
+    let cloneUser=JSON.parse(JSON.stringify(userDetails))
+
+    cloneUser.status.verified=false
+    console.log(cloneUser);
+    console.log(userDetails);
+    </script>
+</body>
+</html>
