@@ -89,12 +89,8 @@ p span:hover{
           let newDiv=document.getElementById('ParentDiv')
           newDiv.appendChild(newElement )
           
-          let text=document.createTextNode(title)
-          newElement.appendChild(text)
-          let checkmark = document.createElement('span');
-            checkmark.innerHTML = ' ✓';
-            checkmark.style.display = 'none';
-            newElement.appendChild(checkmark);
+            let text=document.createTextNode(title)
+            newElement.appendChild(text)
             newElement.addEventListener("click",()=>{
             if (newElement.style.textDecoration === "line-through") {
             newElement.style.textDecoration = "none";
