@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area of rectange and square</title>
+</head>
+<body>
+    <h1>Area of rectangle</h1>
+    <input type="text" name="" id="txt1" placeholder="Enter Length">
+    <input type="text" name="" id="txt2" placeholder="Enter Breadth">
+   
+    <button onclick="rectAngle()">Area</button>
+    <h3 id="result"></h3><br><br><br>
+
+
+
+    <h1>Area of Circle</h1>
+    <input type="text" name="" id="txt3" placeholder="Enter Radius">
+    <button onclick="circle()">Area</button>
+    <h3 id="result2"></h3>
+
+
+
+    <script>
+        let rectAngle=()=>{
+            let text1=document.getElementById('txt1').value;
+            console.log("Length =",text1);
+            let text2=document.getElementById('txt2').value;
+            console.log("Breadth =",text2);
+            if((!text1) || (!text2)){
+                alert("Enter the Length and breadth");
+            }else{
+
+            var area=(text1)=>{
+                return (text2)=>{
+                    return text1*text2;
+                }
+            }
+            let result=area(text1)(text2);
+            console.log("Area of Rectangle",result);
+            document.getElementById('result').innerHTML="Area of Rectangle =" +result;
+           }
+        }
+
+
+
+
+        let  circle=()=>{
+            let text3=document.getElementById('txt3').value;
+            console.log("Radius =",text3);
+               if(!text3){
+                alert("Enter the Radius");
+               }else{
+               var area2=Math.PI*text3*text3;
+               console.log("Area of circle",area2);
+               document.getElementById('result2').innerHTML="Area of Circle =" +area2;
+               }
+        }
+
+        
+
+        
+
+
+
+    </script>
+</body>
+</html>
