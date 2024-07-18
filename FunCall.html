@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Call</title>
+</head>
+<body>
+    <script>
+        // let myFunc={
+        //     firstname:"Mohammed",
+        //     lastname:"Afeef",
+        //     fullname:function(){
+        //         return this.firstname+" "+this.lastname;
+        //     }
+        // }
+        // console.log(myFunc.fullname());
+
+
+
+
+
+
+
+
+
+        // let  person={
+        //     fullname: function(){
+        //         return this.firstname+" "+this.lastname;
+        //     }
+        // }
+
+        // let person1={
+        //     firstname:"John",
+        //     lastname:"Ebraham"
+        // }
+
+        // let person2={
+        //     firstname:"Joseph",
+        //     lastname:"Isacc"
+        // }
+
+        // console.log(person.fullname.call(person2));
+
+
+
+
+
+        // call mehod with arguments
+
+        let person={
+            fullname:function(city,country){
+                return this.firstname+" "+this.lastname +","+city+","+country;
+            }
+        }
+
+        let person1={
+            firstname:"Mohammed",
+            lastname:"Afeef"
+        }
+
+        console.log(person.fullname.call(person1,"Kerala","India"));
+
+
+    </script>
+</body>
+</html>
